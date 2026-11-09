@@ -530,7 +530,7 @@ class ModelNetTrainer(object):
             # train one epoch
 
             for i, data in enumerate(self.train_loader):
-                if self.model_name == 'MEKRL':
+                if self.model_name == 'MUSE':
                     # N batch_size V view C channels H height W weight
                     # print(data[1].size)
                     N, V, C, H, W = data[1].size()
@@ -751,7 +751,7 @@ class ModelNetTrainer(object):
 
 
         for _, data in enumerate(self.val_loader, 0):
-            if self.model_name == 'MEKRL':
+            if self.model_name == 'MUSE':
                 N, V, C, H, W = data[1].size()
                 in_data = data[1].view(-1, C, H, W).cuda()
             else:
