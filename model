@@ -610,9 +610,9 @@ class TransposeLayer(nn.Module):
         return x.transpose(self.dim1, self.dim2)
 
 
-class MEKRL_S(nn.Module):
+class MUSE_S(nn.Module):
     """
-    MEKRL_S（Swin Transformer 版本）
+    MUSE_S（Swin Transformer 版本）
     输出:
         logits: [B*V, nclasses]
         fi:     [B*V, C, h, w]  —— Swin 最后 stage 的特征图
@@ -666,7 +666,7 @@ class MEKRL_S(nn.Module):
         return logits, feat
 
 
-class MEKRL_M(nn.Module):
+class MUSE_M(nn.Module):
     def __init__(self, name, model, pool_mode='PT', nclasses=467, cnn_name='densenet121', num_views=5):
         super().__init__()
 
@@ -674,10 +674,10 @@ class MEKRL_M(nn.Module):
         self.nclasses = nclasses
         self.pool_mode = pool_mode
 
-        # 保存 MEKRL_S
+        # 保存 MUSE_S
         self.net_1 = model
 
-        # MEKRL_S 输出通道
+        # MUSE_S 输出通道
         self.embed_dim = model.embed_dim  # ConvNeXt-Tiny 768
 
         # 投影 Conv（如果需要的话）
