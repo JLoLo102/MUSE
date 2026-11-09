@@ -1,4 +1,4 @@
-MEKRL: Multi-Expert Knowledge Reasoning Learning Framework for Multi-View Patent Recognition
+MUSE: Multi-Expert Knowledge Reasoning Learning Framework for Patent Recognition
 
 
 dataset  https://github.com/JLoLo102/MvDeepPatent
